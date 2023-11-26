@@ -10,13 +10,17 @@ public class Monster extends GameCharacter {
 
 
 	public void hurtCharacter(GameCharacter character) {
-		
+		if (successfulDefense() == false) {
+			character.setHealth(character.getHealth() - 50);
+		}
 	}
 
 	
 	public boolean successfulDefense() {
-		
-		  return true;
+		if (new Random().nextInt(2) == 0) {
+			return false;
+		}
+		return true;
 	}
 
 
