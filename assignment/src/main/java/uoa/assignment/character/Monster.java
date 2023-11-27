@@ -10,24 +10,39 @@ public class Monster extends GameCharacter {
 
 	// 50% chance of successful defense
 	public void hurtCharacter(GameCharacter character) {
-		if (successfulDefense() == false) {
-			character.setHealth(character.getHealth() - 50);
+		if (!successfulDefense()) {
+			character.setHealth(character.getHealth()-50);
 		}
 	}
 
-	// if random number is 0, return false, else return true
+	// Make the monster defend itself randomly
 	public boolean successfulDefense() {
-		if (new Random().nextInt(2) == 0) {
+		Random rand = new Random();
+		int randomNum = rand.nextInt(2);
+		if (randomNum == 0) {
 			return false;
 		}
-		return true;
+		else {
+			return true;
+		}
 	}
 
 
-	
+	// The monster moves randomly
 	public String decideMove () {
-		
-		return "move";
+		Random rand = new Random();
+		int randomNum = rand.nextInt(4);
+		if (randomNum == 0) {
+			return "up";
+		}
+		else if (randomNum == 1) {
+			return "down";
+		}
+		else if (randomNum == 2) {
+			return "left";
+		}
+		else {
+			return "right";
+		}
 	}
-
 }
