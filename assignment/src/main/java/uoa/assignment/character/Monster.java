@@ -28,7 +28,7 @@ public class Monster extends GameCharacter {
 	}
 
 
-	// The monster moves randomly
+	// The monster moves randomly, with equal probability of moving up, down, left or right
 	public String decideMove () {
 		Random rand = new Random();
 		int randomNum = rand.nextInt(4);

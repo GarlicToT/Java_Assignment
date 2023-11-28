@@ -9,7 +9,7 @@ public abstract class GameCharacter {
 	public int row;
 	public int column;
 	
-	//  initialise health to value 100 by default
+	// initialize the character with a name
 	public GameCharacter (String name) {
 		this.name = name;
 	}
@@ -23,10 +23,12 @@ public abstract class GameCharacter {
 		return name;
 	}
 
+	// return the health of the character
 	public int getHealth() {
 		return health;
 	}
 
+	// set the health of the character
 	public void setHealth(int health) {
 		this.health = health;
 	}
