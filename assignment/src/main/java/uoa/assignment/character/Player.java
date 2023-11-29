@@ -1,8 +1,3 @@
-/*hurtCharacter(GameCharacter character) removes 20 health points if the character did not defend 
-successfully (i.e., when character. successfulDefence() returns false).
-successfulDefence() returns likelihood that the player manages to defend itself. Outcome is 
-chosen randomly, and there is 30% chance of successful defence. */
-
 package uoa.assignment.character;
 
 import java.util.Random;
