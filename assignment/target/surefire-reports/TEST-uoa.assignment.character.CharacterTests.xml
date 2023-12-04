@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="uoa.assignment.character.CharacterTests" time="0.032" tests="3" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="uoa.assignment.character.CharacterTests" time="0.046" tests="6" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CN"/>
     <property name="sun.boot.library.path" value="D:\java\bin"/>
-    <property name="sun.java.command" value="C:\Users\SunRo\AppData\Local\Temp\surefire3148094240672576625\surefirebooter12043312016001803938.jar C:\Users\SunRo\AppData\Local\Temp\surefire3148094240672576625 2023-12-04T15-14-07_982-jvmRun1 surefire16389750302258872270tmp surefire_07921042724888056123tmp"/>
+    <property name="sun.java.command" value="C:\Users\SunRo\AppData\Local\Temp\surefire10377143442622707626\surefirebooter8471966313899123881.jar C:\Users\SunRo\AppData\Local\Temp\surefire10377143442622707626 2023-12-04T20-23-14_230-jvmRun1 surefire12817516650231254832tmp surefire_011378198549424187444tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="D:\Desktops\2-1\java\code\Java_Assignment\assignment\target\test-classes;D:\Desktops\2-1\java\code\Java_Assignment\assignment\target\classes;C:\Users\SunRo\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\SunRo\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\SunRo\AppData\Local\Temp\surefire3148094240672576625\surefirebooter12043312016001803938.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\SunRo\AppData\Local\Temp\surefire10377143442622707626\surefirebooter8471966313899123881.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.9+11-LTS-201"/>
@@ -56,11 +56,14 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
+  <testcase name="checkMonsterClassFailedfulAttack" classname="uoa.assignment.character.CharacterTests" time="0.003"/>
   <testcase name="checkHealthFunctionality" classname="uoa.assignment.character.CharacterTests" time="0"/>
-  <testcase name="checkMonsterClassSuccesfulAttack" classname="uoa.assignment.character.CharacterTests" time="0.008">
-    <failure message="&amp;#27;[47m&amp;#27;[30mMake sure the class Monster implements method hurtCharacter() as per T1.4 and all previous tasks have been completed.&amp;#27;[0mjava.lang.AssertionError: expected:&lt;80&gt; but was:&lt;100&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: &amp#27;[47m&amp#27;[30mMake sure the class Monster implements method hurtCharacter() as per T1.4 and all previous tasks have been completed.&amp#27;[0mjava.lang.AssertionError: expected:<80> but was:<100>
-	at uoa.assignment.character.CharacterTests.checkMonsterClassSuccesfulAttack(CharacterTests.java:120)
+  <testcase name="checkIfMonsterDefenceLooksRandom" classname="uoa.assignment.character.CharacterTests" time="0.011"/>
+  <testcase name="checkPlayerClassSuccesfulAttack" classname="uoa.assignment.character.CharacterTests" time="0.004">
+    <failure message="&amp;#27;[47m&amp;#27;[30mMake sure the class Monster implements method hurtCharacter() as per T1.4 and all previous tasks have been completed.&amp;#27;[0mjava.lang.AssertionError: expected:&lt;50&gt; but was:&lt;100&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: &amp#27;[47m&amp#27;[30mMake sure the class Monster implements method hurtCharacter() as per T1.4 and all previous tasks have been completed.&amp#27;[0mjava.lang.AssertionError: expected:<50> but was:<100>
+	at uoa.assignment.character.CharacterTests.checkPlayerClassSuccesfulAttack(CharacterTests.java:218)
 ]]></failure>
   </testcase>
-  <testcase name="checkSayName" classname="uoa.assignment.character.CharacterTests" time="0"/>
+  <testcase name="checkMonsterClassSuccesfulAttack" classname="uoa.assignment.character.CharacterTests" time="0"/>
+  <testcase name="checkSayName" classname="uoa.assignment.character.CharacterTests" time="0.001"/>
 </testsuite>

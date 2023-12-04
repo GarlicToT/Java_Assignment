@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: uoa.assignment.character.CharacterTests
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.032 s <<< FAILURE! - in uoa.assignment.character.CharacterTests
-checkMonsterClassSuccesfulAttack(uoa.assignment.character.CharacterTests)  Time elapsed: 0.008 s  <<< FAILURE!
-java.lang.AssertionError: [47m[30mMake sure the class Monster implements method hurtCharacter() as per T1.4 and all previous tasks have been completed.[0mjava.lang.AssertionError: expected:<80> but was:<100>
-	at uoa.assignment.character.CharacterTests.checkMonsterClassSuccesfulAttack(CharacterTests.java:120)
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.046 s <<< FAILURE! - in uoa.assignment.character.CharacterTests
+checkPlayerClassSuccesfulAttack(uoa.assignment.character.CharacterTests)  Time elapsed: 0.004 s  <<< FAILURE!
+java.lang.AssertionError: [47m[30mMake sure the class Monster implements method hurtCharacter() as per T1.4 and all previous tasks have been completed.[0mjava.lang.AssertionError: expected:<50> but was:<100>
+	at uoa.assignment.character.CharacterTests.checkPlayerClassSuccesfulAttack(CharacterTests.java:218)
 

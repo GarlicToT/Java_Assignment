@@ -124,7 +124,7 @@ public class CharacterTests
     /**
      * Task 1.4 b)
      */
-    /*@Test
+    @Test
     public void checkMonsterClassFailedfulAttack()
     {
        class TestImplementation extends GameCharacter {
@@ -152,12 +152,12 @@ public class CharacterTests
     } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+"Make sure the class Monster implements method hurtCharacter() as per T1.4 and all previous tasks have been completed."+ ANSI_RESET+ e);
     }
-    }*/
+    }
     
     /**
      * Task 1.4 c)
      */
-    /*@Test
+    @Test
     public void checkIfMonsterDefenceLooksRandom()
     {
        
@@ -184,7 +184,7 @@ public class CharacterTests
     } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+"Make sure the class Monster implements method hurtCharacter() as per T1.4 and all previous tasks have been completed."+ ANSI_RESET+ e);
     }
-    }*/
+    }
     
     /**
      * Task 1.5 a)

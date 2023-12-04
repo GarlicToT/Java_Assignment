@@ -10,8 +10,8 @@ public class Monster extends GameCharacter {
 
 	// 50% chance of successful defense
 	public void hurtCharacter(GameCharacter character) {
-		if (!successfulDefense()) {
-			character.setHealth(character.getHealth()-50);
+		if (!character.successfulDefense()) {
+			character.setHealth(character.getHealth()-20);
 		}
 	}
 
@@ -19,7 +19,7 @@ public class Monster extends GameCharacter {
 	public boolean successfulDefense() {
 		Random rand = new Random();
 		int randomNum = rand.nextInt(2);
-		if (randomNum == 0) {
+		if (randomNum==0) {
 			return false;
 		}
 		else {
