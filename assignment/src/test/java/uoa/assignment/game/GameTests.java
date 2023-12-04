@@ -196,7 +196,7 @@ public class GameTests
      * Task 3.1 
      */
    
-    /*@Test
+    @Test
     public void checkRunGameMain() throws InterruptedException 
     {
        try {
@@ -237,13 +237,13 @@ public class GameTests
     } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right.  Check Task 3.1" + ANSI_RESET + e);
     }
-    }*/
+    }
     
  /**
      * Task 3.2 
      */
    
-    /*@Test
+    @Test
     public void checkRunGameMainWithUserInput() throws InterruptedException 
     {
        try {
@@ -289,7 +289,7 @@ public class GameTests
     } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right.  Check Task 3.2" + ANSI_RESET + e);
     }
-    }*/
+    }
     
   
     

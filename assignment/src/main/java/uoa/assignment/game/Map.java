@@ -1,17 +1,3 @@
-/*Modify the variable characters in class Map to hold four objects of type GameCharacter. Modify 
-the constructor for the class Map so that it will initialize a 2D array layout based on the input 
-parameters (integers height and width) passed to the constructor. Parameter height specifies the 
-length of the main array and width specifies the length of the nested arrays (i.e., the result is a 2D 
-array that is an array of arrays). 
-
-Within class Map, create a private method initialiseArray() that will populate the 2D array with 
-full stop characters ‘.’ every time a new instance of class Map is created. Within the same class,
-complete the public method printLayout() that will print the 2D layout array to the console. 
-Example output of the printLayout() method, assuming 3x6 2D array:
-......
-......
-......*/
-
 package uoa.assignment.game;
 
 import uoa.assignment.character.GameCharacter;
