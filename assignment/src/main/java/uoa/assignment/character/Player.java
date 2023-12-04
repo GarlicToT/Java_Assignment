@@ -9,8 +9,8 @@ public class Player extends GameCharacter{
 	}
 
 	public void hurtCharacter(GameCharacter character) {
-		if (!successfulDefense()) {
-			character.setHealth(character.getHealth()-20);
+		if (!character.successfulDefense()) {
+			character.setHealth(character.getHealth()-50);
 		}
 	}
 
@@ -18,7 +18,7 @@ public class Player extends GameCharacter{
 	public boolean successfulDefense() {
 		Random rand = new Random();
 		int randomNum = rand.nextInt(10);
-		if (randomNum < 3) {
+		if (randomNum < 7) {
 			return false;
 		}
 		else {

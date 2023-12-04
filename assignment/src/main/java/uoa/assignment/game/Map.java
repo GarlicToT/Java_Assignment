@@ -40,9 +40,35 @@ public class Map {
         // initialize the variable characters in class Map to hold four objects of type GameCharacter
         characters = new GameCharacter [4];
         characters[0] = new Player("Player1");
-        characters[1] = new Player("Player2");
-        characters[2] = new Monster("Monster1");
-        characters[3] = new Monster("Monster2");
+        characters[1] = new Monster("Monster1");
+        characters[2] = new Monster("Monster2");
+        characters[3] = new Monster("Monster3");
+
+        // Set positions in the layout for Player and Monsters
+        characters[0].row = height-1;
+        characters[0].column = width-1;
+        characters[1].row = 0;
+        characters[1].column = width-1;
+        characters[2].row = height-1;
+        characters[2].column = 0;
+        characters[3].row = 0;
+        characters[3].column = 0;
+
+        // // Place the characters in the layout
+        // for (int i=0; i<characters.length; i++) {
+        //     layout[characters[i].row][characters[i].column] = characters[i].sayName();
+        // }
+
+        // Place the characters in the layout
+        for (int i=0; i<characters.length; i++) {
+            if (i==0) {
+                layout[characters[i].row][characters[i].column] = "*";
+            }
+            else {
+                layout[characters[i].row][characters[i].column] = "%";
+            }
+        }
+
     }
 
     public void printLayout() {

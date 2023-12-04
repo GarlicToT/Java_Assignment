@@ -189,7 +189,7 @@ public class CharacterTests
     /**
      * Task 1.5 a)
      */
-    /*@Test
+    @Test
     public void checkPlayerClassSuccesfulAttack()
     {
        class TestImplementation extends GameCharacter {
@@ -217,12 +217,12 @@ public class CharacterTests
     } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+"Make sure the class Monster implements method hurtCharacter() as per T1.4 and all previous tasks have been completed."+ ANSI_RESET+ e);
     }
-    }*/
+    }
     
     /**
      * Task 1.4 b)
      */
-    /*@Test
+    @Test
     public void checkPlayerClassFailedfulAttack()
     {
        class TestImplementation extends GameCharacter {
@@ -250,12 +250,12 @@ public class CharacterTests
     } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+"Make sure the class Monster implements method hurtCharacter() as per T1.4 and all previous tasks have been completed."+ ANSI_RESET+ e);
     }
-    }*/
+    }
     
     /**
      * Task 1.4 c)
      */
-    /*@Test
+    @Test
     public void checkIfPlayerDefenceLooksRandom()
     {
        
@@ -263,7 +263,7 @@ public class CharacterTests
            Player player = new Player ("monster1"); 
            int positiveResult = 0;
            int negativeResult = 0;
-           //there shoudl not be any random element in hurtCharacter()
+           //there should not be any random element in hurtCharacter()
            for (int i =0; i< 100000;i++) {
            boolean result = player.successfulDefense ();
            if (result) {
@@ -282,7 +282,7 @@ public class CharacterTests
     } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+"Make sure the class Monster implements method hurtCharacter() as per T1.4 and all previous tasks have been completed."+ ANSI_RESET+ e);
     }
-    }*/
+    }
     
     
      
@@ -292,7 +292,7 @@ public class CharacterTests
     /**
      * Task 4.2
      */
-    /*@Test
+    @Test
     public void checkIfMonsterDecidesRandomly()
     {
        
@@ -325,6 +325,6 @@ public class CharacterTests
     } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+"Make sure the class Monster contains a method decideMove() as per T4.2 and all previous tasks have been completed."+ ANSI_RESET+ e);
     }
-    }*/
+    }
     
 }

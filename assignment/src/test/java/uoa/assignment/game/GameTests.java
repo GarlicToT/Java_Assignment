@@ -55,7 +55,7 @@ public class GameTests
      /**
      * Task 2.1 b)
      */
-    /*@Test
+    @Test
     public void checkCharactersArray()
     {
        try {
@@ -73,13 +73,13 @@ public class GameTests
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Did you create a constructor for the Map class? Is the characters array public and of size 4? Did you create teh 2D array layot as specified? Check Task 2.1"+ ANSI_RESET+ e);
     }
       
-    }*/
+    }
     
    
  /**
      * Task 2.2 
      */
-    /*@Test
+    @Test
     public void checkLayoutInitialization()
     {
        try {
@@ -115,14 +115,14 @@ public class GameTests
     } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right with the layout variable. Are you populating teh empty fields with '.'? Check Task 2.2" + ANSI_RESET+ e);
     }
-    }*/
+    }
     
     
     /**
      * Task 2.3 
      */
    
-    /*@Test
+    @Test
     public void checkPlayerAndMonsterPosition()
     {
        try {
@@ -144,13 +144,13 @@ public class GameTests
     } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right with initialising players and monsters.  Check Task 2.4" + ANSI_RESET + e);
     }
-    }*/
+    }
    
     /**
      * Task 2.4 
      */
    
-    /*@Test
+    @Test
     public void checkPlayerAndMonsterPositionInLayout()
     {
        try {
@@ -189,7 +189,7 @@ public class GameTests
     } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right.  Check Task 2.5" + ANSI_RESET + e);
     }
-    }*/
+    }
     
     
   /**
