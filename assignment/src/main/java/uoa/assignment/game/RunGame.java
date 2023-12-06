@@ -20,18 +20,37 @@ public class RunGame {
 
 		Scanner scanner = new Scanner(System.in);
 
-        while (!gameOver) {
+		while (!gameOver) {
 			// Print the round number to the console
 			System.out.println("Round " + round);
 			// Print the layout to the console
 			System.out.println("Enter a move (up, down, left, right):");
 			// Read the input from the console
 			String input = scanner.nextLine();
-			// Call the nextRound method of class Game
-			gameOver = game.nextRound(input);
+		
+			// Check if the input is "exit"
+			if (input.equalsIgnoreCase("exit")) {
+				System.out.println("Game Over!");
+				gameOver = true;
+			} else {
+				// Call the nextRound method of class Game
+				boolean roundResult = game.nextRound(input);
+		
+				// Print the layout after each round
+				game.getMap().printLayout();
+		
+				// Check if the game is over
+				if (!roundResult) {
+					System.out.println("Game Over!");
+					gameOver = true;
+				}
+			}
+		
 			// Increment the round number
 			round++;
 		}
+		
+
 		scanner.close();
 	}
 

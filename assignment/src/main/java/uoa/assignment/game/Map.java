@@ -40,11 +40,6 @@ public class Map {
         characters[3].row = 0;
         characters[3].column = 0;
 
-        // // Place the characters in the layout
-        // for (int i=0; i<characters.length; i++) {
-        //     layout[characters[i].row][characters[i].column] = characters[i].sayName();
-        // }
-
         // Place the characters in the layout
         for (int i=0; i<characters.length; i++) {
             if (i==0) {

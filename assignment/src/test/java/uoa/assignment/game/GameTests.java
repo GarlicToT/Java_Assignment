@@ -296,7 +296,7 @@ public class GameTests
      /**
      * Task 3.3
      */
-    /*@Test
+    @Test
     public void checkMoveCharacter()
     {
           class TestImplementation extends GameCharacter {
@@ -322,12 +322,12 @@ public class GameTests
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right. moveCharacter method must print exactly this sentence when the use rinput is incorrect: 'Use only keywords up, down, left, right' Check Task 3.3"+ ANSI_RESET+ e);
     }
       
-    }*/
+    }
     
     /**
      * Task 3.4 
      */
-    /*@Test
+    @Test
     public void checkMoveCharacterFull()
     {
           try {
@@ -400,7 +400,7 @@ public class GameTests
      } catch (Exception | Error e) {
         fail(ANSI_WHITE_BACKGROUND +ANSI_BLACK+ "Something is not right.  Check Task 3.4" + ANSI_RESET + e);
     }
-    }*/
+    }
     
     /**
      * Task 4.1 
