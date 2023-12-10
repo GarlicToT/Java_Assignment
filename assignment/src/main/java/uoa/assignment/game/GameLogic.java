@@ -1,6 +1,7 @@
 package uoa.assignment.game;
 
 import java.util.Scanner;
+import java.util.Random;
 
 import uoa.assignment.character.GameCharacter;
 import uoa.assignment.character.Player;
@@ -8,10 +9,21 @@ import uoa.assignment.character.Monster;
 
 public class GameLogic {
 
-    public static void moveCharacter(String input, Map gameMap, GameCharacter character) {
+	public static void moveCharacter(String input, Map gameMap, GameCharacter character) {
         // check if the input is a valid direction
         if (input.equals("up") || input.equals("down") || input.equals("left") || input.equals("right")) {
-            switch (input) {
+            String selectedDirection = input;
+
+            // Use a while loop to keep selecting a direction until a valid one is found
+            while (!isValidDirection(gameMap, character, selectedDirection)) {
+                // Select a new direction randomly
+                String[] directions = {"up", "down", "left", "right"};
+                Random random = new Random();
+                selectedDirection = directions[random.nextInt(directions.length)];
+            }
+
+            // Move the character in the valid direction
+            switch (selectedDirection) {
                 case "up":
                     moveUp(gameMap, character);
                     break;
@@ -30,6 +42,46 @@ public class GameLogic {
         }
     }
 
+    // Add a method to check if the selected direction is valid
+    private static boolean isValidDirection(Map gameMap, GameCharacter character, String direction) {
+        int newRow = character.row;
+        int newColumn = character.column;
+
+        switch (direction) {
+            case "up":
+                newRow--;
+                break;
+            case "down":
+                newRow++;
+                break;
+            case "left":
+                newColumn--;
+                break;
+            case "right":
+                newColumn++;
+                break;
+            default:
+                return false;
+        }
+
+        // Check if the target position is within the boundaries of the map
+        if (newRow < 0 || newRow >= gameMap.layout.length || newColumn < 0 || newColumn >= gameMap.layout[newRow].length) {
+            return false;
+        }
+
+        // Check if the target position is already occupied by another character
+        for (GameCharacter otherCharacter : gameMap.characters) {
+            if (otherCharacter != character && otherCharacter.row == newRow && otherCharacter.column == newColumn) {
+                if (character instanceof Monster && otherCharacter instanceof Monster) {
+                    System.out.println("Monster already there so can't move");
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
     private static void moveUp(Map gameMap, GameCharacter character) {
 		String characterSymbol = character instanceof Player ? "*" : "%";
 		int row = character.row;
@@ -39,7 +91,7 @@ public class GameLogic {
 			character.row = row - 1;
 			gameMap.layout[row - 1][column] = characterSymbol;
 		}else{
-			System.out.println("You can't move up");
+			System.out.println("You can't go up. You lose a move.");
 		}
     }
 
@@ -52,7 +104,7 @@ public class GameLogic {
 			character.row = row + 1;
 			gameMap.layout[row + 1][column] = characterSymbol;
 		}else{
-			System.out.println("You can't move down");
+			System.out.println("You can't go down. You lose a move.");
 		}
     }
 
@@ -65,7 +117,7 @@ public class GameLogic {
 			character.column = column - 1;
 			gameMap.layout[row][column - 1] = characterSymbol;
 		}else{
-			System.out.println("You can't move left");
+			System.out.println("You can't go left. You lose a move.");
 		}
     } 
 
@@ -78,7 +130,20 @@ public class GameLogic {
 			character.column = column + 1;
 			gameMap.layout[row][column + 1] = characterSymbol;
 		}else{
-			System.out.println("You can't move right");
+			System.out.println("You can't go right. You lose a move.");
 		}
     }
+
+	private static String getCharacterSymbol(GameCharacter character) {
+        return character instanceof Player ? "*" : "%";
+    }
+
+    public static void printMoveMessage(GameCharacter character, String direction) {
+		// if (character instanceof Player) {
+		// 	System.out.println("Player is moving " + direction);
+		// } else {
+			System.out.println(character.sayName() + " is moving " + direction);
+		// }
+	}	
+	
 }

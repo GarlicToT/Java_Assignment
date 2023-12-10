@@ -24,7 +24,7 @@ public class RunGame {
 			// Print the round number to the console
 			System.out.println("Round " + round);
 			// Print the layout to the console
-			System.out.println("Enter a move (up, down, left, right):");
+			System.out.println();
 			// Read the input from the console
 			String input = scanner.nextLine();
 		

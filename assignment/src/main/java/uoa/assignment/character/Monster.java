@@ -1,10 +1,15 @@
 package uoa.assignment.character;
 
 import java.util.Random;
+import java.util.Scanner;
+
 
 public class Monster extends GameCharacter {
+
+	private int height;
+	private int width;
 	
-	public  Monster(String name) {
+	public Monster(String name) {
 		super(name);
 	}
 
@@ -27,22 +32,17 @@ public class Monster extends GameCharacter {
 		}
 	}
 
+    public String decideMove() {
+        String[] directions = {"up", "down", "left", "right"};
+        Random random = new Random();
+        String selectedDirection;
 
-	// The monster moves randomly, with equal probability of moving up, down, left or right
-	public String decideMove () {
-		Random rand = new Random();
-		int randomNum = rand.nextInt(4);
-		if (randomNum == 0) {
-			return "up";
-		}
-		else if (randomNum == 1) {
-			return "down";
-		}
-		else if (randomNum == 2) {
-			return "left";
-		}
-		else {
-			return "right";
-		}
-	}
+        // 随机选择一个可以移动的方向
+        {
+            selectedDirection = directions[random.nextInt(directions.length)];
+        };
+
+        return selectedDirection;
+    }
+
 }

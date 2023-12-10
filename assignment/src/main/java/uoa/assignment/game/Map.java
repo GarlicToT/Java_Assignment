@@ -25,7 +25,7 @@ public class Map {
         initialiseArray();
         // initialize the variable characters in class Map to hold four objects of type GameCharacter
         characters = new GameCharacter [4];
-        characters[0] = new Player("Player1");
+        characters[0] = new Player("Player");
         characters[1] = new Monster("Monster1");
         characters[2] = new Monster("Monster2");
         characters[3] = new Monster("Monster3");
@@ -40,16 +40,25 @@ public class Map {
         characters[3].row = 0;
         characters[3].column = 0;
 
-        // Place the characters in the layout
-        for (int i=0; i<characters.length; i++) {
-            if (i==0) {
-                layout[characters[i].row][characters[i].column] = "*";
-            }
-            else {
-                layout[characters[i].row][characters[i].column] = "%";
-            }
-        }
+    // Place the characters in the layout
+    for (GameCharacter character : characters) {
+        layout[character.row][character.column] = getCharacterSymbol(character);
+    }
+}
 
+private void setCharacterPosition(GameCharacter character, int row, int column) {
+    // Ensure the target position is within the boundaries of the map
+    if (row >= 0 && row < layout.length && column >= 0 && column < layout[row].length) {
+        character.row = row;
+        character.column = column;
+    } else {
+        // Handle an invalid position (you may choose to throw an exception or take other actions)
+        System.out.println("Invalid starting position for character: " + character.sayName());
+    }
+}
+
+    private String getCharacterSymbol(GameCharacter character) {
+        return character instanceof Player ? "*" : "%";
     }
 
     public void printLayout() {
