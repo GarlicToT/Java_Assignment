@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: uoa.assignment.game.GameTests
 -------------------------------------------------------------------------------
-Tests run: 11, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 2.094 s <<< FAILURE! - in uoa.assignment.game.GameTests
-checkMoveIntoWall(uoa.assignment.game.GameTests)  Time elapsed: 0.004 s  <<< FAILURE!
-java.lang.AssertionError: [47m[30mSomething is not right.  Check Task 4.1[0mjava.lang.AssertionError
-	at uoa.assignment.game.GameTests.checkMoveIntoWall(GameTests.java:450)
-
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.092 s - in uoa.assignment.game.GameTests

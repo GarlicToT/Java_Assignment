@@ -14,14 +14,12 @@ public class GameLogic {
         if (input.equals("up") || input.equals("down") || input.equals("left") || input.equals("right")) {
             String selectedDirection = input;
 
-            // Use a while loop to keep selecting a direction until a valid one is found
-            while (!isValidDirection(gameMap, character, selectedDirection)) {
-                // Select a new direction randomly
-                String[] directions = {"up", "down", "left", "right"};
-                Random random = new Random();
-                selectedDirection = directions[random.nextInt(directions.length)];
+            if (character instanceof Monster) {
+                if (hasMonster(gameMap, character, selectedDirection)) {
+                    return;
+                }
             }
-
+                        
             // Move the character in the valid direction
             switch (selectedDirection) {
                 case "up":
@@ -40,6 +38,38 @@ public class GameLogic {
         } else {
             System.out.println("Use only keywords up, down, left, right");
         }
+    }
+
+    private static boolean hasMonster(Map gameMap, GameCharacter character, String direction) {
+        int newRow = character.row;
+        int newColumn = character.column;
+
+        switch (direction) {
+            case "up":
+                newRow--;
+                break;
+            case "down":
+                newRow++;
+                break;
+            case "left":
+                newColumn--;
+                break;
+            case "right":
+                newColumn++;
+                break;
+            default:
+                return false;
+        }
+        // Check if the target position is already occupied by another character
+        for (GameCharacter otherCharacter : gameMap.characters) {
+            if (otherCharacter != character && otherCharacter.row == newRow && otherCharacter.column == newColumn) {
+                if (otherCharacter instanceof Monster) {
+                    System.out.println("Monster already there so can't move");
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     // Add a method to check if the selected direction is valid
@@ -69,16 +99,6 @@ public class GameLogic {
             return false;
         }
 
-        // Check if the target position is already occupied by another character
-        for (GameCharacter otherCharacter : gameMap.characters) {
-            if (otherCharacter != character && otherCharacter.row == newRow && otherCharacter.column == newColumn) {
-                if (character instanceof Monster && otherCharacter instanceof Monster) {
-                    System.out.println("Monster already there so can't move");
-                    return false;
-                }
-            }
-        }
-
         return true;
     }
 
@@ -90,6 +110,7 @@ public class GameLogic {
 			gameMap.layout[row][column] = ".";
 			character.row = row - 1;
 			gameMap.layout[row - 1][column] = characterSymbol;
+            printMoveMessage(character, "up");
 		}else{
 			System.out.println("You can't go up. You lose a move.");
 		}
@@ -103,6 +124,7 @@ public class GameLogic {
 			gameMap.layout[row][column] = ".";
 			character.row = row + 1;
 			gameMap.layout[row + 1][column] = characterSymbol;
+            printMoveMessage(character, "down");
 		}else{
 			System.out.println("You can't go down. You lose a move.");
 		}
@@ -116,6 +138,7 @@ public class GameLogic {
 			gameMap.layout[row][column] = ".";
 			character.column = column - 1;
 			gameMap.layout[row][column - 1] = characterSymbol;
+            printMoveMessage(character, "left");
 		}else{
 			System.out.println("You can't go left. You lose a move.");
 		}
@@ -129,6 +152,7 @@ public class GameLogic {
 			gameMap.layout[row][column] = ".";
 			character.column = column + 1;
 			gameMap.layout[row][column + 1] = characterSymbol;
+            printMoveMessage(character, "right");
 		}else{
 			System.out.println("You can't go right. You lose a move.");
 		}

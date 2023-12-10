@@ -19,7 +19,6 @@ public class Game {
     public boolean nextRound(String input) {
         // Handle the input and update the game state
         GameLogic.moveCharacter(input, map, map.characters[0]); // Assuming characters[0] is the player
-        GameLogic.printMoveMessage(map.characters[0], input);
 
         // Move the monsters
         for (int i=1; i<map.characters.length; i++) {
@@ -27,7 +26,7 @@ public class Game {
                 Monster monster = (Monster) map.characters[i];
                 String monsterMove = monster.decideMove();
                 GameLogic.moveCharacter(monsterMove, map, monster);
-                GameLogic.printMoveMessage(monster, monsterMove);
+                // GameLogic.printMoveMessage(monster, monsterMove);
             }
         }
 
