@@ -37,7 +37,6 @@ public class Game {
         }
         System.out.println();
 
-
         // Check if the game should end (e.g., player reached a goal, collided with a monster, etc.)
         if (gameWin()) {
             System.out.println("YOU HAVE WON!");

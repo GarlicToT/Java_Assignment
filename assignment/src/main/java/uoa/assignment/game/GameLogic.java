@@ -74,7 +74,7 @@ public class GameLogic {
                 else if (otherCharacter instanceof Player && character instanceof Monster) {
                     character.hurtCharacter(otherCharacter);
                     if (otherCharacter.getHealth() <= 0) {
-                        // replace the player symbol "*" with "X" to indicate that the player is dead
+                        // replace the player symbol "*" with "x" to indicate that the player is dead
                         gameMap.layout[otherCharacter.row][otherCharacter.column] = "x";
                     }
                     return true;
@@ -83,7 +83,6 @@ public class GameLogic {
                     character.hurtCharacter(otherCharacter);
                     if (otherCharacter.getHealth() <= 0) {
                         gameMap.layout[otherCharacter.row][otherCharacter.column] = "x";
-                        System.out.println("Character already dead");
                     }
                     return true;
                 }
